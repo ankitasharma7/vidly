@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import {getMovies} from './Services/fakeMovieService'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { 
+    movies : getMovies({ _id : id})
+   } 
+   getMove = ()=>{
+    console.log(this.state.movies.getMovies._id);
+   }
+  render() { 
+    return (
+      <main className='container'>
+       <button onClick={this.getMove}>click</button>
+    </main>
+    );
+  }
 }
-
+ 
 export default App;
+
+
